@@ -1,4 +1,3 @@
-// Versión de Resumen - CONFLICTO CON LOS FILTROS
 using Microsoft.AspNetCore.Mvc;
 using PortalCampanas.Models;
 using PortalCampanas.Data;
