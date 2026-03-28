@@ -1,3 +1,7 @@
+using PortalCampanas.Models;
+
+namespace PortalCampanas.Data;
+
 public static class DataStorage {
     public static List<Campana> Campanas = new List<Campana> {
         new Campana { Id = 1, Nombre = "Cierra Puertas Electro", Categoria = "Electro", Estado = "Vigente", FechaInicio = DateTime.Now.AddDays(-5), FechaFin = DateTime.Now.AddDays(2), DescuentoPct = 30, Canal = "Web", Descripcion = "Todo electro con dscto." },
