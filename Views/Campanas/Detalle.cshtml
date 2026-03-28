@@ -1,0 +1,19 @@
+@model PortalCampanas.Models.Campana
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0">@Model.Nombre</h3>
+        </div>
+        <div class="card-body">
+            <p><strong>Categoría:</strong> @Model.Categoria</p>
+            <p><strong>Estado:</strong> <span class="badge bg-info">@Model.Estado</span></p>
+            <p><strong>Descuento:</strong> <span class="text-danger">@Model.DescuentoPct%</span></p>
+            <hr />
+            <p>@Model.Descripcion</p>
+        </div>
+        <div class="card-footer">
+            <a asp-action="Index" class="btn btn-secondary">Volver al Listado</a>
+        </div>
+    </div>
+</div>

@@ -8,4 +8,11 @@ public class CampanasController : Controller {
         var lista = DataStorage.Campanas;
         return View(lista);
     }
+
+    public IActionResult Detalle(int id)
+    {
+        var campana = DataStorage.Campanas.FirstOrDefault(c => c.Id == id);
+        if (campana == null) return NotFound();
+        return View(campana);
+    }
 }
