@@ -23,4 +23,12 @@ public class CampanasController : Controller {
         if (campana == null) return NotFound();
         return View(campana);
     }
+
+    public IActionResult Resumen()
+    {
+        var campanas = DataStorage.Campanas;
+        ViewBag.Total = campanas.Count;
+        ViewBag.Vigentes = campanas.Count(c => c.Estado == "Vigente");
+        return View();
+    }
 }
