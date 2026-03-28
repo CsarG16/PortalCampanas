@@ -1,6 +1,6 @@
-namespace PortalCampanas.Data; // <--- ESTA LÍNEA ES LA CLAVE
-
 using PortalCampanas.Models;
+
+namespace PortalCampanas.Data;
 
 public static class DataStorage {
     public static List<Campana> Campanas = new List<Campana> {
