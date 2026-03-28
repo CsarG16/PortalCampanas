@@ -4,9 +4,17 @@ using PortalCampanas.Data;
 
 namespace PortalCampanas.Controllers;
 public class CampanasController : Controller {
-    public IActionResult Index() {
-        var lista = DataStorage.Campanas;
-        return View(lista);
+    public IActionResult Index(string categoria, string estado)
+    {
+        var lista = DataStorage.Campanas.AsEnumerable();
+
+        if (!string.IsNullOrEmpty(categoria))
+            lista = lista.Where(c => c.Categoria.Contains(categoria, StringComparison.OrdinalIgnoreCase));
+
+        if (!string.IsNullOrEmpty(estado))
+            lista = lista.Where(c => c.Estado.Contains(estado, StringComparison.OrdinalIgnoreCase));
+
+        return View(lista.ToList());
     }
 
     public IActionResult Detalle(int id)
