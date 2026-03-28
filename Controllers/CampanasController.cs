@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PortalCampanas.Models;
 using PortalCampanas.Data;
+// Versión de Filtros - Examen manejo de conlfictos
 
 namespace PortalCampanas.Controllers;
 public class CampanasController : Controller {
