@@ -1,8 +1,61 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio - Evaluación Continua 1";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="p-5 mb-4 bg-light rounded-3 shadow-sm border-start border-5 border-danger">
+                <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold text-dark">Evaluación Continua 1</h1>
+                    <p class="col-md-12 fs-4 text-muted">
+                        Bienvenido, <strong>Ing. Fred Duarte</strong>. 
+                        A continuación, se presenta la solución desarrollada para el examen, 
+                        enfocada en la gestión de campañas comerciales.
+                    </p>
+                    <hr class="my-4">
+                    
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <h5 class="fw-bold"><i class="bi bi-code-slash me-2"></i>Tecnologías Utilizadas</h5>
+                            <ul class="list-unstyled">
+                                <li><span class="badge bg-dark">ASP.NET Core MVC 10.0</span></li>
+                                <li><span class="badge bg-dark">Entity Framework (In-Memory)</span></li>
+                                <li><span class="badge bg-dark">Bootstrap 5.3</span></li>
+                                <li><span class="badge bg-dark">Git & GitHub</span></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <h5 class="fw-bold"><i class="bi bi-git me-2"></i>Hitos del Proyecto</h5>
+                            <ul class="text-muted small">
+                                <li>Arquitectura basada en el patrón MVC.</li>
+                                <li>Flujo de trabajo con ramas (Develop/Feature/Main).</li>
+                                <li>Resolución manual de conflictos de Merge.</li>
+                                <li>Diseño responsivo con identidad USMP.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mt-5">
+                        <a asp-controller="Campanas" asp-action="Index" class="btn btn-danger btn-lg px-4 fw-bold">
+                            INGRESAR AL SISTEMA
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm bg-dark text-white">
+                <div class="card-body d-flex justify-content-between align-items-center px-4">
+                    <div>
+                        <h6 class="mb-0 text-uppercase small opacity-75">Estudiante</h6>
+                        <span class="fs-5">César Paredes Palacios</span>
+                    </div>
+                    <div class="text-end">
+                        <h6 class="mb-0 text-uppercase small opacity-75">Curso</h6>
+                        <span class="fs-5">Programación 1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

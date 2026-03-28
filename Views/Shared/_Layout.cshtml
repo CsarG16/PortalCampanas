@@ -1,47 +1,60 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - PortalCampanas</title>
-    <script type="importmap"></script>
+    <title>@ViewData["Title"] - Portal de Campanas USMP</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/PortalCampanas.styles.css" asp-append-version="true" />
+    <style>
+        .navbar-usmp { background-color: #ce2e2e; } 
+        .nav-link { color: white !important; }
+        .footer-usmp { background-color: #f8f9fa; border-top: 3px solid #ce2e2e; padding: 20px 0; }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-usmp border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">PortalCampanas</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <a class="navbar-brand text-white fw-bold" asp-area="" asp-controller="Home" asp-action="Index">Portal Campanas</a>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link fw-bold" asp-controller="Campanas" asp-action="Index">Lista de Campañas</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; © 2026 - Portal de Campanas - Módulo Resumen <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="footer-usmp mt-5">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <p class="mb-0"><strong>Alumno:</strong> César Paredes Palacios</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="mb-0"><strong>Curso:</strong> Programación 1</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="mb-0"><strong>Ciclo:</strong> VI - 2026</p>
+                </div>
+            </div>
+            <hr />
+            <p class="mb-0">&copy; 2026 - Universidad de San Martín de Porres</p>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

@@ -1,19 +1,75 @@
 @model PortalCampanas.Models.Campana
 
-<div class="container mt-4">
-    <div class="card shadow">
-        <div class="card-header bg-primary text-white">
-            <h3 class="mb-0">@Model.Nombre</h3>
-        </div>
-        <div class="card-body">
-            <p><strong>Categoría:</strong> @Model.Categoria</p>
-            <p><strong>Estado:</strong> <span class="badge bg-info">@Model.Estado</span></p>
-            <p><strong>Descuento:</strong> <span class="text-danger">@Model.DescuentoPct%</span></p>
-            <hr />
-            <p>@Model.Descripcion</p>
-        </div>
-        <div class="card-footer">
-            <a asp-action="Index" class="btn btn-secondary">Volver al Listado</a>
+@{
+    ViewData["Title"] = "Detalle de Campaña - " + Model.Nombre;
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0 rounded-3">
+                <div class="card-header bg-dark text-white py-3 ps-4">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h2 class="mb-0 fw-bold">@Model.Nombre</h2>
+                        <span class="badge bg-danger fs-6">ID #@Model.Id</span>
+                    </div>
+                </div>
+
+                <div class="card-body p-4">
+                    <div class="row mb-4">
+                        <div class="col-sm-6">
+                            <h6 class="text-uppercase text-muted fw-bold small">Información General</h6>
+                            <p class="mb-1"><strong>Categoría:</strong> <span class="text-dark">@Model.Categoria</span></p>
+                            <p class="mb-1">
+                                <strong>Estado:</strong> 
+                                @{
+                                    var badgeClass = Model.Estado == "Vigente" ? "bg-success" : 
+                                                    Model.Estado == "Proxima" ? "bg-warning text-dark" : "bg-secondary";
+                                }
+                                <span class="badge @badgeClass">@Model.Estado</span>
+                            </p>
+                            <p><strong>Canal:</strong> <span class="badge bg-light text-dark border">@Model.Canal</span></p>
+                        </div>
+                        <div class="col-sm-6 text-sm-end">
+                            <h6 class="text-uppercase text-muted fw-bold small">Promoción</h6>
+                            <div class="display-4 fw-bold text-danger">@Model.DescuentoPct%</div>
+                            <p class="text-muted">Descuento aplicado</p>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <div class="mb-4">
+                        <h6 class="text-uppercase text-muted fw-bold small">Descripción Detallada</h6>
+                        <div class="p-3 bg-light rounded border-start border-4 border-danger">
+                            <p class="lead mb-0 text-dark" style="font-size: 1.1rem;">
+                                @Model.Descripcion
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="p-3 border rounded text-center bg-white">
+                                <small class="d-block text-muted text-uppercase fw-bold">Fecha Inicio</small>
+                                <span class="fw-bold">@Model.FechaInicio.ToString("dd/MM/yyyy")</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-3 border rounded text-center bg-white">
+                                <small class="d-block text-muted text-uppercase fw-bold">Fecha Fin</small>
+                                <span class="fw-bold">@Model.FechaFin.ToString("dd/MM/yyyy")</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer bg-white border-top-0 p-4 text-center">
+                    <a asp-action="Index" class="btn btn-outline-dark rounded-pill px-5 fw-bold">
+                        <i class="bi bi-arrow-left"></i> VOLVER AL LISTADO
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
